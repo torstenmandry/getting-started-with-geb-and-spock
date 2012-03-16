@@ -36,6 +36,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.16'
 
         test "org.codehaus.geb:geb-spock:0.6.3"
+        compile "org.codehaus.geb:geb-core:0.6.3", "org.seleniumhq.selenium:selenium-firefox-driver:2.15.0", "org.seleniumhq.selenium:selenium-support:2.15.0"
     }
 
     plugins {
