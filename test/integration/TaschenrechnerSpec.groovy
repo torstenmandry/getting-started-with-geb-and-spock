@@ -10,10 +10,10 @@ class TaschenrechnerSpec extends GebSpec {
         title == "Web 2.0 Taschenrechner"
 
         when:
-        $("a", id: "num_1").click()
-        $("a", id: "A42").click()
-        $("a", id: "num_2").click()
-        $("a", id: "btn_equal").click()
+        $("a#num_1").click()
+        $("a#A42").click()
+        $("a#num_2").click()
+        $("a#btn_equal").click()
 
         then:
         $("input", id: "input").value() == "3"
@@ -37,7 +37,21 @@ class TaschenrechnerSpec extends GebSpec {
         then:
         display.value() == "3"
     }
-    
 
+
+
+    def "Addition von 1 und 2 ergibt 3 - funktional"() {
+        given:
+        to TaschenrechnerPage
+
+        expect:
+        at TaschenrechnerPage
+
+        when:
+        page.type( "1+2=" )
+
+        then:
+        result == "3"
+    }
 
 }
