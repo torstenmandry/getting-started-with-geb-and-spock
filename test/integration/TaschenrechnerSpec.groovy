@@ -16,7 +16,7 @@ class TaschenrechnerSpec extends GebSpec {
         $("a#btn_equal").click()
 
         then:
-        $("input", id: "input").value() == "3"
+        $("input#input").value() == "3"
 
     }
 
@@ -48,7 +48,7 @@ class TaschenrechnerSpec extends GebSpec {
         at TaschenrechnerPage
 
         when:
-        page.type( "1+2=" )
+        calculate( "1+2" )
 
         then:
         result == "3"
