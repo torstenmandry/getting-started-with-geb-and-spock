@@ -1,4 +1,5 @@
 import geb.spock.GebSpec
+import spock.lang.Unroll
 
 class TaschenrechnerSpec extends GebSpec {
 
@@ -48,10 +49,33 @@ class TaschenrechnerSpec extends GebSpec {
         at TaschenrechnerPage
 
         when:
-        calculate( "1+2" )
+        calculate("1+2")
 
         then:
         result == "3"
     }
 
+
+    @Unroll("#formula ergibt #expectedResult")
+    def "Addition von zwei Zahlen"() {
+        given:
+        to TaschenrechnerPage
+
+        expect:
+        at TaschenrechnerPage
+
+        when:
+        calculate(formula)
+
+        then:
+        result == expectedResult
+
+        where:
+        formula | expectedResult
+        "1+2"   | "3"
+        "2+3"   | "5"
+        "3+4"   | "7"
+        "4+5"   | "9"
+        "5+6"   | "11"
+    }
 }

@@ -20,6 +20,13 @@ class TaschenrechnerPage extends Page {
     def ids = [
             "1" : "num_1",
             "2" : "num_2",
+            "3" : "num_3",
+            "4" : "num_4",
+            "5" : "num_5",
+            "6" : "num_6",
+            "7" : "num_7",
+            "8" : "num_8",
+            "9" : "num_9",
             "+" : "A42",
             "=" : "btn_equal"
     ]
